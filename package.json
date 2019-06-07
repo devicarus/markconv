@@ -1,0 +1,30 @@
+{
+  "name": "markpdf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "markpdf": "cli.js"
+  },
+  "author": {
+    "name": "DEVICARUS",
+    "email": "me@devicarus.eu",
+    "url": "https://devicarus.eu/"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@iktakahiro/markdown-it-katex": "^3.1.0",
+    "katex": "^0.10.1",
+    "markdown-it": "^8.4.2",
+    "markdown-it-attrs": "^2.3.4",
+    "markdown-it-br": "^1.0.0",
+    "markdown-it-container": "^2.0.0",
+    "markdown-it-katex": "^2.0.3",
+    "markdown-it-wiki-toc": "^1.0.4",
+    "pdf-puppeteer": "^1.1.6",
+    "replace-ext": "^1.0.0"
+  }
+}
