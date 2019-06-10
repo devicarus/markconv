@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-var markpdf = require('./main')
+var markpdf = require('./lib/main')
 
 var fs = require('fs')
 var replaceExt = require('replace-ext');
