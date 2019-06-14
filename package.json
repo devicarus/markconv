@@ -24,6 +24,7 @@
     "markdown-it-container": "^2.0.0",
     "markdown-it-katex": "^2.0.3",
     "markdown-it-wiki-toc": "^1.0.4",
+    "meow": "^5.0.0",
     "pdf-puppeteer": "^1.1.6",
     "replace-ext": "^1.0.0"
   }
