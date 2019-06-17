@@ -1,4 +1,4 @@
-markpdf
+# markpdf
 
 > Feature-rich markdown convertor currently supporting HTML and PDF
 
@@ -7,6 +7,8 @@ npm i markconv
 ```
 
 ## Features
+
+- Export to HTML and PDF
 
 - CSS support
 
@@ -18,6 +20,8 @@ npm i markconv
 
 - LaTeX support
 
+- Both library and CLI tool
+
 ## How to use
 
 ### CLI
@@ -28,17 +32,11 @@ Install `markconv` globaly
 npm i markconv -g
 ```
 
-Use `markconf`
+Use `markconf` in CLI
 
 ```bash
-markconv [source] [style] [format]
+markconv --help
 ```
-
-`source` - Path to your markdown file *(required)*
-
-`style` - Path to your CSS file *(required, maybe changed in later updates)*
-
-`format` - Your target format *(required)*
 
 ### Code
 
@@ -52,10 +50,25 @@ Use `markconv` in your code
 
 ```javascript
 markpdf({
-    source: "source.md", // Path to your markdown file (required)
-    style: "style.css", //Path to your CSS file (required, maybe changed in later updates)
-    output: "format" // Your target format (required)
-}).then(output => {
-    // YOUR CODE
+	source: "MyFile.md",
+	style: "style.css",
+	output: "pdf"
+},
+{
+	pdf: {
+		sandbox: false,
+		page: {
+			format: 'A6',
+			margin: {
+				left: '30px',
+				right: '30px',
+				top: '30px',
+				bottom: '30px'
+			}
+		}
+	}
+}).then(file => {
+    // Your code here, e.g.:
+	fs.writeFileSync(`./MyPDF.pdf`, file, "utf-8")
 })
 ```

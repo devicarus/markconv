@@ -9,16 +9,21 @@ var replaceExt = require('replace-ext');
 
 const cli = meow(`
 	Usage
-	  $ markconf source=<source file> style=<styles file (optional)> format=<output format> pdf=<pdf options (works only with pdf format)> [Options]
+	  $ markconf source=<source file> style=<styles file (optional)> format=<output format> pdf=<pdf options (optional)> [Options]
 
 	Supported output formats
 	  html, pdf
- 
+
+	PDF options
+	  [page format (A4, A5, ...)]/[left margin (in px)]/[right]/[top]/[bottom]
+
+	  If you choose to use this parameter, you have to fill in all of these.
+
 	Options
 	  --nosandbox, -ns  Passes no-sandbox flag to Puppeteer
- 
+
 	Examples
-	  $ markconf source=MyFile.md style=style.css format=pdf --nosandbox
+	  $ markconf source=MyFile.md style=style.css format=pdf pdf=A5/20/20/20/20 --nosandbox
 `, {
 	flags: {
 		nosandbox: {
