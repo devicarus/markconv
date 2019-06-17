@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 'use strict'
-var markpdf = require('./main')
+var markpdf = require('./index')
 
 const meow = require('meow');
 var fs = require('fs')
@@ -9,7 +9,7 @@ var replaceExt = require('replace-ext');
 
 const cli = meow(`
 	Usage
-	  $ markconf source=<source file> style=<styles file (optional)> format=<output format> config=<config file> [Options]
+	  $ markconf source=<source file> style=<styles file (optional)> format=<output format> pdf=<pdf options (works only with pdf format)> [Options]
 
 	Supported output formats
 	  html, pdf
@@ -31,8 +31,14 @@ const cli = meow(`
 var parameters = {
 	'source': "",
 	'style': "",
-	'output': "",
-	'config': ""
+	'output': ""
+}
+
+var options = {
+	pdf: {
+		sandbox: cli.flags.sandbox,
+		page: null
+	}
 }
 
 for (let index = 0; index < cli.input.length; index++) {
@@ -51,8 +57,20 @@ for (let index = 0; index < cli.input.length; index++) {
 			parameters.output = argument[1]
 			break;
 
-		case 'config':
-			parameters.config = argument[1]
+		case 'pdf':
+			var split = argument[1].split('/')
+			if (split.length != 5) {
+				console.log(new Error('Unvalid value of pdf argument'))
+			}
+			options.pdf.page = {
+				format: split[0],
+				margin: {
+					left: split[1] + 'px',
+					right: split[2] + 'px',
+					top: split[3] + 'px',
+					bottom: split[4] + 'px'
+				}
+			}
 			break;
 
 		default:
@@ -61,20 +79,7 @@ for (let index = 0; index < cli.input.length; index++) {
 	}
 }
 
-var preferences = {
-	pdf: {
-		config: null,
-		arguments: {
-			sandbox: cli.flags.sandbox
-		}
-	}
-}
-
-if (parameters.config != "") {
-	preferences.pdf.config = require(path.resolve(parameters.config));	
-}
-
-markpdf(parameters, preferences)
+markpdf(parameters, options)
 	.then((file) => {
 		var target = replaceExt(parameters.source, `.${parameters.output}`)
 		fs.writeFileSync(target, file, "utf-8")
