@@ -2,8 +2,14 @@
 
 > Feature-rich markdown convertor currently supporting HTML and PDF
 
+## Quick start
+
 ```bash
-npm i markconv
+# Install markconv globaly to use in cli
+npm i markconv -g
+
+# Example cli command
+markconv source=MyFile.md format=pdf
 ```
 
 ## Features
@@ -50,25 +56,27 @@ Use `markconv` in your code
 
 ```javascript
 markpdf({
-	source: "MyFile.md",
-	style: "style.css",
-	output: "pdf"
+    source: "MyFile.md",
+    style: "style.css",
+    output: "pdf"
 },
 {
-	pdf: {
-		sandbox: false,
-		page: {
-			format: 'A6',
-			margin: {
-				left: '30px',
-				right: '30px',
-				top: '30px',
-				bottom: '30px'
-			}
-		}
-	}
+    pdf: {
+        sandbox: false,
+        page: {
+            format: 'A6',
+            margin: {
+                left: '30px',
+                right: '30px',
+                top: '30px',
+                bottom: '30px'
+            }
+        }
+    }
 }).then(file => {
     // Your code here, e.g.:
-	fs.writeFileSync(`./MyPDF.pdf`, file, "utf-8")
+    fs.writeFileSync(`./MyPDF.pdf`, file, "utf-8")
 })
 ```
+
+> More informations about various options and parameters can be found in `markconv --help`
