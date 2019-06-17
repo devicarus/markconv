@@ -2,9 +2,9 @@
   "name": "markconv",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node cli.js"
   },
   "bin": {
     "markconv": "cli.js"
@@ -24,6 +24,7 @@
     "markdown-it-container": "^2.0.0",
     "markdown-it-katex": "^2.0.3",
     "markdown-it-wiki-toc": "^1.0.4",
+    "meow": "^5.0.0",
     "pdf-puppeteer": "^1.1.6",
     "replace-ext": "^1.0.0"
   }
