@@ -12,6 +12,8 @@ npm i markconv -g
 markconv source=MyFile.md format=pdf
 ```
 
+[API example](#api)
+
 ## Features
 
 - Export to HTML and PDF
@@ -32,30 +34,29 @@ markconv source=MyFile.md format=pdf
 
 ### CLI
 
-Install `markconv` globaly
-
 ```bash
+# Install markconv globaly
 npm i markconv -g
-```
 
-Use `markconf` in CLI
-
-```bash
+# Use markconv in CLI
 markconv --help
 ```
 
-### Code
+### API
 
 Install `markconv`
 
-```
+```bash
 npm i markconv
 ```
 
 Use `markconv` in your code
 
 ```javascript
-markpdf({
+const markconv = require('markconv')
+const fs = require('fs')
+
+markconv({
     source: "MyFile.md",
     style: "style.css",
     output: "pdf"
