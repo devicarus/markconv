@@ -20,9 +20,9 @@ markconv source=MyFile.md format=pdf
 
 - CSS support
 
-- Page break helper
+- [Page break helper](#page-break)
 
-- Automatic Table of Contents generation
+- [Automatic Table of Contents generation](#toc-generator)
 
 - Automatic wiki-like heading numbering
 
@@ -80,4 +80,20 @@ markconv({
 })
 ```
 
-> More informations about various options and parameters can be found in `markconv --help`
+## Markdown helpers
+
+### Page Break
+
+```md
+# First page
+---
+# Second page
+<hr>
+# Third page
+```
+
+### TOC Generator
+
+```md
+@[toc]
+```
