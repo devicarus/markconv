@@ -1,13 +1,25 @@
 {
-  "name": "markpdf",
+  "name": "markconv",
   "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
+  "description": "Feature-rich markdown convertor currently supporting HTML and PDF",
+  "keywords": [
+    "markdown",
+    "html",
+    "pdf",
+    "convert",
+    "latex",
+    "toc"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DEVICARUS/markconv.git"
+  },
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node cli.js"
   },
   "bin": {
-    "markpdf": "cli.js"
+    "markconv": "cli.js"
   },
   "author": {
     "name": "DEVICARUS",
@@ -24,6 +36,7 @@
     "markdown-it-container": "^2.0.0",
     "markdown-it-katex": "^2.0.3",
     "markdown-it-wiki-toc": "^1.0.4",
+    "meow": "^5.0.0",
     "pdf-puppeteer": "^1.1.6",
     "replace-ext": "^1.0.0"
   }
