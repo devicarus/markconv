@@ -1,4 +1,4 @@
-# markpdf
+# markconv
 
 > Feature-rich markdown convertor currently supporting HTML and PDF
 
