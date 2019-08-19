@@ -1,11 +1,12 @@
 {
   "name": "markconv",
-  "version": "1.0.1",
-  "description": "Feature-rich markdown convertor currently supporting HTML and PDF",
+  "version": "1.0.2",
+  "description": "Feature-rich markdown converter currently supporting HTML and PDF",
   "keywords": [
     "markdown",
     "html",
     "pdf",
+    "converter",
     "convert",
     "latex",
     "toc"
@@ -34,7 +35,6 @@
     "markdown-it-attrs": "^2.3.4",
     "markdown-it-br": "^1.0.0",
     "markdown-it-container": "^2.0.0",
-    "markdown-it-katex": "^2.0.3",
     "markdown-it-wiki-toc": "^1.0.4",
     "meow": "^5.0.0",
     "pdf-puppeteer": "^1.1.6",
