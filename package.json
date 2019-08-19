@@ -1,11 +1,12 @@
 {
   "name": "markconv",
   "version": "1.0.1",
-  "description": "Feature-rich markdown convertor currently supporting HTML and PDF",
+  "description": "Feature-rich markdown converter currently supporting HTML and PDF",
   "keywords": [
     "markdown",
     "html",
     "pdf",
+    "converter",
     "convert",
     "latex",
     "toc"
