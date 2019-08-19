@@ -1,6 +1,6 @@
 {
   "name": "markconv",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Feature-rich markdown converter currently supporting HTML and PDF",
   "keywords": [
     "markdown",
