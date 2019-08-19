@@ -1,6 +1,6 @@
 # markconv
 
-> Feature-rich markdown convertor currently supporting HTML and PDF
+> Feature-rich markdown converter currently supporting HTML and PDF
 
 ## Quick start
 
