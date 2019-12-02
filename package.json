@@ -1,6 +1,6 @@
 {
   "name": "markconv",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Feature-rich markdown converter currently supporting HTML and PDF",
   "keywords": [
     "markdown",
@@ -15,7 +15,7 @@
     "type": "git",
     "url": "https://github.com/DEVICARUS/markconv.git"
   },
-  "main": "index.js",
+  "main": "lib/main.js",
   "scripts": {
     "start": "node cli.js"
   },
