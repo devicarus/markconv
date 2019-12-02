@@ -15,7 +15,7 @@
     "type": "git",
     "url": "https://github.com/DEVICARUS/markconv.git"
   },
-  "main": "index.js",
+  "main": "lib/main.js",
   "scripts": {
     "start": "node cli.js"
   },

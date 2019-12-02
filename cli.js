@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 'use strict'
-var markpdf = require('./index')
+var markconv = require('./index')
 
 const meow = require('meow');
 var fs = require('fs')
@@ -9,7 +9,7 @@ var replaceExt = require('replace-ext');
 
 const cli = meow(`
 	Usage
-	  $ markconf source=<source file> style=<styles file (optional)> format=<output format> pdf=<pdf options (optional)> [Options]
+	  $ markconv source=<source file> style=<styles file (optional)> format=<output format> pdf=<pdf options (optional)> [Options]
 
 	Supported output formats
 	  html, pdf
@@ -23,7 +23,7 @@ const cli = meow(`
 	  --nosandbox, -ns  Passes no-sandbox flag to Puppeteer
 
 	Examples
-	  $ markconf source=MyFile.md style=style.css format=pdf pdf=A5/20/20/20/20 --nosandbox
+	  $ markconv source=MyFile.md style=style.css format=pdf pdf=A5/20/20/20/20 --nosandbox
 `, {
 	flags: {
 		nosandbox: {
@@ -84,7 +84,7 @@ for (let index = 0; index < cli.input.length; index++) {
 	}
 }
 
-markpdf(parameters, options)
+markconv(parameters, options)
 	.then((file) => {
 		var target = replaceExt(parameters.source, `.${parameters.output}`)
 		fs.writeFileSync(target, file, "utf-8")
