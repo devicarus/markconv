@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 'use strict'
-var markconv = require('./index')
+var markconv = require('./lib/main')
 
 const meow = require('meow');
 var fs = require('fs')
